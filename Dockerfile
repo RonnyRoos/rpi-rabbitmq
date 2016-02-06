@@ -9,8 +9,7 @@ RUN apt-get update && \
 apt-get install -yqq \
 rabbitmq-server 
 
-RUN \
-rabbitmq-plugins enable rabbitmq_management && \
+RUN rabbitmq-plugins enable rabbitmq_management && \
 	echo "[{rabbit, [{loopback_users, []}]}]." > /etc/rabbitmq/rabbitmq.config && \
 	chmod +x /usr/local/bin/rabbitmq-start 
 
